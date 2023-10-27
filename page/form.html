@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Liên Hệ</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moon-time@2.4.0/calculate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="contact-form">
+      <ul class="list-menu">
+        <li><a href="./TheoMenh.html">Lọc Mệnh</a></li>
+        <li><a href="./TheoNam.html">Lọc Năm</a></li>
+        <li><a href="./TheoQuy.html">Lọc Quý</a></li>
+        <li><a href="./TheoThang.html">Lọc Tháng</a></li>
+      </ul>
+      <h2>Form Liên Hệ</h2>
+      <form id="myForm" onsubmit="return validateForm()">
+        <div class="name-fields">
+          <div>
+            <label for="ho_dem">Họ Đệm:</label>
+            <input type="text" id="ho_dem" name="ho_dem" required />
+          </div>
+          <div>
+            <label for="ten">Tên:</label>
+            <input type="text" id="ten" name="ten" required />
+          </div>
+        </div>
+
+        <label for="ngay_sinh">Ngày Sinh:</label>
+        <input type="date" id="ngay_sinh" name="ngay_sinh" required />
+
+        <label for="ngay_am">Ngày Sinh âm:</label>
+        <input type="date" id="ngay_am" name="ngay_am" readonly />
+
+        <label for="menh">Mệnh:</label>
+        <input type="text" id="menh" name="menh" readonly />
+
+        <label for="so_dien_thoai">Số Điện Thoại:</label>
+        <input type="tel" id="so_dien_thoai" name="so_dien_thoai" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="tieu_de">Tiêu Đề:</label>
+        <input type="text" id="tieu_de" name="tieu_de" required />
+
+        <label for="noi_dung">Nội Dung:</label>
+        <textarea id="noi_dung" name="noi_dung" rows="5" required></textarea>
+
+        <button type="submit">Gửi</button>
+      </form>
+      <script src="../form.js"></script>
+      <script src="../postData.js"></script>
+      <script src="../data.js"></script>
+    </div>
+  </body>
+</html>

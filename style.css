@@ -1,0 +1,60 @@
+/* Định dạng cho form */
+.contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #45a049;
+}
+
+/* Định dạng cho ô họ đệm và tên */
+.contact-form .name-fields {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-form .name-fields input {
+  flex-basis: 48%;
+}
+
+.list-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.list-menu li {
+  list-style: none;
+}
+
+.list-menu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.list-menu li a:hover{
+    text-decoration: dashed;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Group People by Birth Year</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="table-container"></div>
+
+    <script>
+      // Mảng dữ liệu
+      var data = [
+        {
+          fullName: "Phạm Nguyên Tí",
+          birthday: "1990-05-31",
+          menh: "Mệnh Kim",
+        },
+        {
+          fullName: "Võ Nguyên Thìn",
+          birthday: "2008-02-02",
+          menh: "Mệnh Thổ",
+        },
+        {
+          fullName: "Phạm Nguyên Phương",
+          birthday: "1991-02-15",
+          menh: "Mệnh Kim",
+        },
+        {
+          fullName: "Võ Nguyên Tí",
+          birthday: "1998-05-28",
+          menh: "Mệnh Thổ",
+        },
+        {
+          fullName: "Vũ Văn Bình",
+          birthday: "1997-05-27",
+          menh: "Mệnh Hoả",
+        },
+        {
+          fullName: "Vũ Văn Quỳnh",
+          birthday: "1994-02-01",
+          menh: "Mệnh Mộc",
+        },
+        {
+          fullName: "Võ Thị Linh",
+          birthday: "2001-07-19",
+          menh: "Mệnh Kim",
+        },
+        {
+          fullName: "Bùi Văn Bình",
+          birthday: "1997-10-04",
+          menh: "Mệnh Hoả",
+        },
+        {
+          fullName: "Nguyễn Văn Minh",
+          birthday: "1999-01-03",
+          menh: "Mệnh Thổ",
+        },
+        {
+          fullName: "Võ Nguyên Phương",
+          birthday: "2009-06-24",
+          menh: "Mệnh Thổ",
+        },
+      ];
+
+      // Tạo đối tượng đại diện cho nhóm người cùng tháng sinh
+      var groups = {};
+
+      // Phân nhóm dữ liệu theo tháng
+      for (var i = 0; i < data.length; i++) {
+        var person = data[i];
+        var month = parseInt(person.birthday.split("-")[1]);
+
+        if (!groups[month]) {
+          groups[month] = [];
+        }
+
+        groups[month].push(person);
+      }
+
+      // Tạo HTML bảng
+      var tableHTML =
+        "<table><thead><tr><th>Tháng Sinh</th><th>Họ Tên</th><th>Mệnh</th></tr></thead><tbody>";
+
+      for (var month in groups) {
+        tableHTML +=
+          "<tr><td rowspan='" + groups[month].length + "'>" + month + "</td>";
+
+        for (var j = 0; j < groups[month].length; j++) {
+          var person = groups[month][j];
+          tableHTML +=
+            "<td>" + person.fullName + "</td><td>" + person.menh + "</td></tr>";
+        }
+      }
+
+      tableHTML += "</tbody></table>";
+
+      // Đưa HTML vào một phần tử có id là "table-container"
+      document.getElementById("table-container").innerHTML = tableHTML;
+    </script>
+  </body>
+</html>
